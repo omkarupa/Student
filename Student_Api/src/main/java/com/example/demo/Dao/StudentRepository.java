@@ -16,4 +16,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 	@Query("update Student set fname=:fname,lname =:lname,address =:address,email =:email,mobile =:mobile ,password =:password where id=:id")
 	void updateStudent(@Param("fname")String fname,@Param("lname")String lname,@Param("address")String address,@Param("email")String email,@Param("mobile")String mobile,@Param("password")String password,@Param("id")int id);
 
+	
+	
 }

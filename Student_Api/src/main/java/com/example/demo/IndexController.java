@@ -52,5 +52,15 @@ public class IndexController {
 		return "index";
 	}
 	
+	@PostMapping("deleteStudent")
+	public String deleteStudent(@RequestParam("id") int id,Model m)
+	{
+		Student student = repo.findById(id).get();
+		repo.delete(student);
+		
+		m.addAttribute("students", repo.findAll());
+		
+		return "index";
+	}
 
 }
